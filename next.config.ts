@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
+import { setupDevPlatform } from '@opennextjs/cloudflare'
 
-const nextConfig: NextConfig = {
-  // Remove "output: export" to support API routes (Auth.js)
-  // Cloudflare Pages via @cloudflare/next-on-pages handles edge deployment
-};
+if (process.env.NODE_ENV === 'development') {
+  await setupDevPlatform()
+}
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
+
+export default nextConfig
