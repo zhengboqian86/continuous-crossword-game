@@ -8,6 +8,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
+  trustHost: true,
   callbacks: {
     session({ session, token }) {
       if (session.user && token.sub) {
