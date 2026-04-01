@@ -6,9 +6,3 @@ pages_build_output_dir = ".worker-next"
 [observability]
 enabled = true
 
-[vars]
-# These will be overridden by environment variables in Cloudflare Pages
-AUTH_SECRET = ""
-AUTH_GOOGLE_ID = ""
-AUTH_GOOGLE_SECRET = ""
-
