@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postbuild": "rm -rf .next/cache"
   },
   "dependencies": {
     "next": "15.1.3",
