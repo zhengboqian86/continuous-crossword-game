@@ -113,16 +113,16 @@ export default function Home() {
                 <span className="text-purple-200 text-sm font-medium">
                   {session.user.name}
                 </span>
-                <button
-                  onClick={() => window.location.href = '/api/auth/signout?callbackUrl=/'}
+                <a
+                  href="/api/auth/signout?callbackUrl=/"
                   className="text-purple-400 hover:text-white text-xs border border-purple-400/40 rounded-lg px-3 py-1.5 transition-colors hover:border-purple-300"
                 >
                   Sign out
-                </button>
+                </a>
               </div>
             ) : (
-              <button
-                onClick={() => window.location.href = '/api/auth/signin/google?callbackUrl=/'}
+              <a
+                href="/api/auth/signin/google?callbackUrl=/"
                 className="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-medium px-4 py-2 rounded-xl text-sm transition-colors shadow-lg"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24">
@@ -144,7 +144,7 @@ export default function Home() {
                   />
                 </svg>
                 Sign in with Google
-              </button>
+              </a>
             )
           )}
         </div>
