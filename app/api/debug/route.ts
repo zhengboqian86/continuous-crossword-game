@@ -2,7 +2,7 @@ export const runtime = "edge"
 
 export async function GET(request: Request) {
   try {
-    // Cloudflare Pages 通过 request 上下文传递环境变量
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const env = (request as any).env || {}
     
     return Response.json({
