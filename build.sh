@@ -1,11 +1,8 @@
 #!/bin/bash
 set -e
 
-# Build Next.js
-npx next build
-
-# Remove cache
-rm -rf .next/cache
-
-# Run OpenNext
+# Run OpenNext (which builds Next.js internally)
 npx @opennextjs/cloudflare
+
+# Remove cache from output directory
+rm -rf .worker-next/.next/cache
