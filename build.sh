@@ -5,8 +5,10 @@ set -e
 npx @opennextjs/cloudflare build
 
 # Prepare Cloudflare Pages output directory
-# Pages expects: static files at root + _worker.js for the Worker
 mkdir -p .worker-next
+
+# Copy ALL OpenNext build artifacts (including .build directory)
+cp -r .open-next/. .worker-next/
 
 # Copy static assets to root of output dir
 cp -r .open-next/assets/. .worker-next/
@@ -16,3 +18,5 @@ cp .open-next/worker.js .worker-next/_worker.js
 
 # Remove cache from output directory
 rm -rf .next/cache
+
+echo "Build completed successfully, output in .worker-next"
